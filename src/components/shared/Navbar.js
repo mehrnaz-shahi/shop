@@ -1,18 +1,28 @@
-import React, {useContext} from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
+import { useSelector } from "react-redux";
+
 
 import styles from "../../templates/Navbar.module.css";
 
-//context
-import { CardContext } from '../../context/CardContextProvider';
+// //context
+// import { CardContext } from '../../context/CardContextProvider';
 //icon 
 import shopIcon from '../../asset/icons/shop.svg';
 
 
 
-const Navbar = () => {
+const Navbar = () => {    
 
-    const {state} = useContext(CardContext);
+    // const {state} = useContext(CardContext);
+
+      // Use Redux for setching data
+  const state = useSelector(
+    (state) => state.cartsState
+  );
+
+
+
     return (
         <div className={styles.container}>
             <header className={styles.header}>

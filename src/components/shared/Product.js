@@ -10,7 +10,7 @@ import { shorten, isInCard, quantityCounter} from '../../helper/functions';
 //icons
 import trash from '../../asset/icons/trash.svg';
 // Style
-import styles from "../../templates/Product.module.css";
+import styles from "../../styles/Product.module.css";
 // Actions of redux
 import { addItem, decrease, increase, removeItem } from '../../features/cart/cartSlicer';
 

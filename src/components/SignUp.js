@@ -3,8 +3,8 @@ import { validate } from './validate';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import {notify} from './toast.js';
-import Styles from '../templates/Signup.module.css';
-import '../templates/box.css';
+import Styles from '../styles/Signup.module.css';
+import '../styles/box.css';
 import { Link } from 'react-router-dom';
 
 

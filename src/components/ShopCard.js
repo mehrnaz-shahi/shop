@@ -11,7 +11,7 @@ import {clear, checkout} from "../features/cart/cartSlicer";
 //component
 import Card from "./shared/Card";
 //style
-import styles from "../templates/ShopCard.module.css";
+import styles from "../styles/ShopCard.module.css";
 
 const ShopCard = () => {
   // // use context

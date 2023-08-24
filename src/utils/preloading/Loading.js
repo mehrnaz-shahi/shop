@@ -1,7 +1,7 @@
 import React from 'react';
 
 // CSS
-import '../../templates/loading.css';
+import '../../styles/loading.css';
 
 const Loading = () => {
     return (

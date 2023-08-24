@@ -6,7 +6,7 @@ import Product from "./shared/Product";
 // Loading
 import Loading from "../utils/preloading/Loading";
 //style
-import styles from "../templates/Store.module.css";
+import styles from "../styles/Store.module.css";
 
 import { useSelector, useDispatch } from "react-redux";
 // Action

@@ -7,7 +7,7 @@ import { shorten } from '../../helper/functions';
 //icons
 import trash from '../../asset/icons/trash.svg';
 // style
-import styles from "../../templates/Card.module.css";
+import styles from "../../styles/Card.module.css";
 
 // Dispath of redux
 import { useDispatch } from "react-redux";

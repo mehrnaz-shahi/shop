@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { useSelector } from "react-redux";
 
 
-import styles from "../../templates/Navbar.module.css";
+import styles from "../../styles/Navbar.module.css";
 
 // //context
 // import { CardContext } from '../../context/CardContextProvider';

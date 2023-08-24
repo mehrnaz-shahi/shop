@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 // import { productsContext } from '../context/ProductContextProvider';
 import { Link } from 'react-router-dom';
 // style
-import styles from "../templates/ProductDetails.module.css";
+import styles from "../styles/ProductDetails.module.css";
 // Redux 
 import { useSelector } from 'react-redux';
 

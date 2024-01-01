@@ -7,7 +7,7 @@ import { BrowserRouter } from "react-router-dom";
 // Redux provider to bind app
 import { Provider } from "react-redux";
 // Store in redux
-import store from "./reduxStore/reduxStore";
+import store from "./app/reduxStore";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

@@ -13,7 +13,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { fetchProducts } from "../features/product/producstSlice";
 
 const Store = () => {
-  // Use Redux for setching data
+  // Use Redux for fetching data
   const { productList, loading, error } = useSelector(
     (state) => state.productsState
   );

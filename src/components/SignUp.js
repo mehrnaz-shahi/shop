@@ -109,7 +109,7 @@ const submitHandeler = (event) => {
                                 value={data.confirmPassword} 
                                 placeholder='confirm password' 
                                 onChange={changeHandeler}/>
-                            {errors.confirmPassword && touch.confirmPassword && <span>{errors.confirmPassword}</span>}
+                            {errors.confirmPassword && touch.confirmPassword && <span className='error'>{errors.confirmPassword}</span>}
                         </div>
                         <div className={Styles.accept_div}>
                             <div className={Styles.chekbox_div}>
@@ -135,7 +135,7 @@ const submitHandeler = (event) => {
                 </div>
                 <div className={Styles.formButtons}>
                     <Link to="/login">Login</Link>
-                    <button type='submit' className={Styles.submit_btn}>Sing Up</button>
+                    <button type='submit' className={Styles.submit_btn+' submit_btn'}>Sing Up</button>
                 </div>
             </form>
             <ToastContainer />

@@ -27,13 +27,13 @@ const Product = ({productData}) => {
 
 
     return (
-        <div className={styles.container} style={{minHeight: '490px'}}>
-            <img className={styles.cardImage} src={productData.image}  alt='' />
+        <div className={styles.container + ' product-card'} style={{minHeight: '490px'}}>
+            <img className={styles.cardImage + ' card-img'} src={productData.image}  alt='' />
             <h2>{shorten(productData.title)}</h2>
             <h3>category: {productData.category}</h3>
             <p>Price: {productData.price}</p>
             <div className={styles.linkContainer}>
-                <Link to={`/products/${productData.id}`}>Detail </Link>
+                <Link to={`/products/${productData.id}`} className='detail-link'>Detail </Link>
                
                 <div className={styles.buttonContainer}>
                     {

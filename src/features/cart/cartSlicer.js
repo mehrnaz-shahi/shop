@@ -1,14 +1,20 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+// // Action in productSlice
+// import { fetchProductsSuccess } from "../product/producstSlice";
+
+const   initialState =  {
+  selectedItem: [],
+  itemCounter: 0,
+  totalPrice: 0,
+  checkout: false,
+}
+
+
 export const CartsSlice = createSlice({
   name: "carts",
 
-  initialState: {
-    selectedItem: [],
-    itemCounter: 0,
-    totalPrice: 0,
-    checkout: false,
-  },
+  initialState,
 
   reducers: {
     addItem: (state, action) => {
@@ -63,6 +69,14 @@ export const CartsSlice = createSlice({
       state.checkout = false;
     },
   },
+
+
+//   // When fetchProductsSuccess executed, state.itemCounter increase
+//   extraReducers: (builder) => {
+//         builder.addCase(fetchProductsSuccess, (state, action) => {
+//             state.itemCounter ++;
+//         })
+//   }
 });
 
 const sumItems = (state, item) => {

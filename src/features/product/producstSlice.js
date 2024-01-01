@@ -1,6 +1,14 @@
-import { createSlice } from '@reduxjs/toolkit';
-
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
+
+export const fetchProducts = createAsyncThunk('products/fetchProducts', async () => {
+  try {
+    const response = await axios.get('https://fakestoreapi.com/products/');
+    return response.data; // Return the data from the response
+  } catch (error) {
+    throw new Error('Error fetching products');
+  }
+});
 
 export const productsSlice = createSlice({
   name: 'products',
@@ -9,42 +17,23 @@ export const productsSlice = createSlice({
     productList: [],
     error: '',
   },
-  reducers: {
-    fetchProductsRequest: (state) => {
-        state.loading = true; 
-      },
-      fetchProductsSuccess: (state, action) => {
+  reducers: {},
+  extraReducers: (builder) => {
+    builder
+      .addCase(fetchProducts.pending, (state) => {
+        state.loading = true;
+      })
+      .addCase(fetchProducts.fulfilled, (state, action) => {
         state.loading = false;
-        state.productList = action.payload; // Update productList with data from action payload
-        state.error = ''; // Reset errors
-      },
-      fetchProductsFailure: (state, action) => {
+        state.productList = action.payload;
+        state.error = '';
+      })
+      .addCase(fetchProducts.rejected, (state, action) => {
         state.loading = false;
-        state.productList = []
-        state.error = action.payload; // Update errors with data from action payload
-      }, 
-     },
-})
+        state.productList = [];
+        state.error = action.error.message;
+      });
+  },
+});
 
-
-export const fetchProducts = () => {
-    return async (dispatch) => {
-      dispatch(fetchProductsRequest());
-
-      await axios.get('https://fakestoreapi.com/products/')
-        .then(response => {
-            const products = response.data;
-            dispatch(fetchProductsSuccess(products));
-        })
-        .catch(error => {
-            const errorMessege = error.message;
-            dispatch(fetchProductsFailure(errorMessege));
-        })
-    };
-  };
-
-// Export action creators
-export const { fetchProductsRequest, fetchProductsSuccess, fetchProductsFailure } = productsSlice.actions;
-
-// Export the reducer
 export default productsSlice.reducer;
